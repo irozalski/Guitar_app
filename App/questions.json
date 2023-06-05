@@ -1,0 +1,61 @@
+{
+  "question1": {
+    "button1": {
+      "image": "border-image:url(Chords/C-7.png)",
+      "sound": "Sounds/C-7.wav"
+    },
+    "button2": {
+      "image": "border-image:url(Chords/D-7.png)",
+      "sound": "Sounds/D-7.wav"
+    },
+    "button3": {
+      "image": "border-image:url(Chords/E-dur.png)",
+      "sound": "Sounds/E-dur.wav"
+    },
+    "button4": {
+      "image_7": "border-image:url(Chords/C-7.png)",
+      "sound_7": "Sounds/C-7.wav"
+    }
+  },
+
+  "question2": {
+    "button1": {
+      "image": "border-image:url(Chords/F-7.png)",
+      "sound": "Sounds/F-7.wav"
+    },
+    "button2": {
+      "image": "border-image:url(Chords/D-7.png)",
+      "sound": "Sounds/D-7.wav"
+    },
+    "button3": {
+      "image": "border-image:url(Chords/A-mol.png)",
+      "sound": "Sounds/A-mol.wav"
+    },
+    "button4": {
+      "image": "border-image:url(Chords/F-7.png)",
+      "sound": "Sounds/F-7.wav"
+    }
+  },
+  "question3": {
+    "button1": {
+      "image": "border-image:url(Chords/Dis-dur.png)",
+      "sound": "Sounds/Dis-dur.wav"
+    },
+    "button2": {
+      "image": "border-image:url(Chords/D-7.png)",
+      "sound": "Sounds/D-7.wav"
+    },
+    "button3": {
+      "image": "border-image:url(Chords/Gis-mol.png)",
+      "sound": "Sounds/Gis-mol.wav"
+    },
+    "button4": {
+      "image": "border-image:url(Chords/Dis-dur.png)",
+      "sound": "Sounds/Dis-dur.wav"
+    }
+  }
+}
+
+
+
+

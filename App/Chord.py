@@ -1,3 +1,5 @@
+import json
+
 from PyQt6.QtGui import QFont, QIcon
 from PyQt6.QtCore import QTimer
 from PyQt6.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QSlider, QPushButton, QLabel
@@ -5,7 +7,7 @@ import winsound
 from window import ChordsWindow
 from Menu_button import Menu_button
 
-
+import random
 
 class Chord:
 
@@ -24,7 +26,7 @@ class Chord:
         self.sound_mol = sound_mol
 
     def create_button(self, window):
-        button = Menu_button(self.variant, window, self.x_cor, self.y_cor, self.wg, self.hg, self.on_click)
+        Menu_button(self.variant, window, self.x_cor, self.y_cor, self.wg, self.hg, self.on_click)
 
 
     def create_new_window(self):
@@ -35,8 +37,22 @@ class Chord:
     def on_click(self):
         self.new_window.show()
 
+    def load_from_json(self, filename):
+        with open(filename, "r") as f:
+            data = json.loads(f.read())
+            self.variant = data["variant"]
+            self.x_cor = data["x_cor"]
+            self.y_cor = data["y_cor"]
+            self.wg = data["wg"]
+            self.hg = data["hg"]
+            self.image_7 = data["image_7"]
+            self.image_dur = data["image_dur"]
+            self.image_mol = data["image_mol"]
+            self.sound_7 = data["sound_7"]
+            self.sound_dur = data["sound_dur"]
+            self.sound_mol = data["sound_mol"]
 
-
+            #f.close()
 
 
 

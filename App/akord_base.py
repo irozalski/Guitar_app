@@ -1,3 +1,4 @@
+import json
 config = {
             "akord_c": {"variant": "C_chords", "x_cor": 60, "y_cor": 300, "wg":150, "hg": 50, "image_7": "border-image:url(Chords/C-7.png)",
                         "image_dur": "border-image:url(Chords/C-dur.png)", "image_mol": "border-image:url(Chords/C-mol.png)",
@@ -47,3 +48,7 @@ config = {
                         "image_dur": "border-image:url(Chords/H-dur.png)", "image_mol": "border-image:url(Chords/H-mol.png)",
                         "sound_7": "Sounds/H-7.wav", "sound_dur": "Sounds/H-dur.wav", "sound_mol": "Sounds/H-mol.wav"},
 }
+
+# json_string = json.dumps(config, indent=2)
+# with open("json_chords_base.json", "w") as f:
+#     f.write(json_string)

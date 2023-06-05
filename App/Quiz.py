@@ -1,6 +1,6 @@
 import random
 import time
-
+from Menu_button import Menu_button
 from PyQt6.QtWidgets import  QWidget
 
 from PyQt6.QtGui import QFont
@@ -9,28 +9,23 @@ import window as window
 
 class Quiz:
 
-    def __init__(self, variant, x_cor, y_cor, wg, hg, question_list):
-        self.variant = variant
+    def __init__(self, x_cor, y_cor, wg, hg, question_list):
         self.x_cor = x_cor
         self.y_cor = y_cor
         self.wg = wg
         self.hg = hg
-        self.new_window = window.ChordsWindow(self.variant)
+        self.new_window = window.ChordsWindow("Quiz")
         self.question_list = question_list
         self.question_number = random.randrange(0, 12)
         self.score = 0
 
     def create_button(self, window):
-        button = QPushButton(self.variant, window)
-        button.setFont(QFont("Times", 15))
-        button.setGeometry(self.x_cor, self.y_cor, self.wg, self.hg)
-        button.setStyleSheet("color: rgb(255, 255, 255)")
-        button.clicked.connect(self.on_click)
+        Menu_button("Quiz", window, self.x_cor, self.y_cor, self.wg, self.hg, self.on_click)
 
 
     def on_click(self):
         self.new_window.show()
-        self.next_question()
+        #self.next_question()
 
 
 
@@ -46,6 +41,11 @@ class Quiz:
         #self.new_window.create_quiz_button(image=current_question.question_answer, x_cor=440, y_cor=350, wg=285, hg=197, answer=current_question.question_answer, guess=current_question.question_answer)
 
 
+    def random_question(self):
+        random_quest1 = random.choice(self.question_list)
+        random_quest2 = random.choice(self.question_list)
+        random_quest3 = random.choice(self.question_list)
+        random_quest4 = random.choice(self.question_list)
 
 
 

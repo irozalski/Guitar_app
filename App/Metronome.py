@@ -6,14 +6,12 @@ from Menu_button import Menu_button
 
 
 class Metronome(QWidget):
-    def __init__(self, x_cor, y_cor, wg, hg, image_7, sound_7):
+    def __init__(self, x_cor, y_cor, wg, hg):
         super().__init__()
         self.x_cor = x_cor
         self.y_cor = y_cor
         self.wg = wg
         self.hg = hg
-        self.image_7 = image_7
-        self.sound_7 = sound_7
         self.tempo = 120
         self.is_running = False
         self.setWindowIcon(QIcon("metro_icon2.png"))
@@ -71,8 +69,7 @@ class Metronome(QWidget):
         winsound.Beep(1000, 200)
 
     def create_button(self, window):
-        button = Menu_button("Metronome", window, self.x_cor, self.y_cor, self.wg, self.hg, self.on_click)
-
+        Menu_button("Metronome", window, self.x_cor, self.y_cor, self.wg, self.hg, self.on_click)
 
     def on_click(self):
         self.show()

@@ -5,6 +5,8 @@ from PyQt6.QtCore import QUrl
 import Quiz as Quiz
 from Menu_button import Menu_button
 from Sound_button import Sound_button
+
+
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -35,7 +37,7 @@ class ChordsWindow(QMainWindow):
         self.setStyleSheet("background-image:url(new_background2.png); background-attachment: fixed")
 
     def create_sound_button(self, x_cor, y_cor, wg, hg, sound_file_name, image):
-        button = Sound_button(self, x_cor, y_cor, wg, hg, sound_file_name, image)
+        Sound_button(self, x_cor, y_cor, wg, hg, sound_file_name, image)
 
 
     def create_quiz_button(self, image, x_cor, y_cor, wg, hg, answer, guess):

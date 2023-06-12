@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QPushButton
-from window import ChordsWindow
+from ChordsWindow import ChordsWindow
 from PyQt6.QtGui import QFont
 from Menu_button import Menu_button
 

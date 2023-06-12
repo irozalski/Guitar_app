@@ -4,7 +4,7 @@ from PyQt6.QtGui import QFont, QIcon
 from PyQt6.QtCore import QTimer
 from PyQt6.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QSlider, QPushButton, QLabel
 import winsound
-from window import ChordsWindow
+from ChordsWindow import ChordsWindow
 from Menu_button import Menu_button
 
 import random

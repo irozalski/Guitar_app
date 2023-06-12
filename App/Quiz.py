@@ -1,59 +1,54 @@
 import random
-import time
 from Menu_button import Menu_button
-from PyQt6.QtWidgets import  QWidget
+from question_model import Question_model
+import ChordsWindow as ChordsWindow
 
-from PyQt6.QtGui import QFont
-from PyQt6.QtWidgets import QPushButton
-import window as window
 
 class Quiz:
 
-    def __init__(self, x_cor, y_cor, wg, hg, question_list):
+    def __init__(self,x_cor, y_cor, wg, hg, chords_images_sounds):
         self.x_cor = x_cor
         self.y_cor = y_cor
         self.wg = wg
         self.hg = hg
-        self.new_window = window.ChordsWindow("Quiz")
-        self.question_list = question_list
-        self.question_number = random.randrange(0, 12)
+        self.new_window = ChordsWindow.ChordsWindow("Quiz")
+        self.chords_images_sounds = chords_images_sounds
         self.score = 0
 
+
+
     def create_button(self, window):
-        Menu_button("Quiz", window, self.x_cor, self.y_cor, self.wg, self.hg, self.on_click)
-
-
-    def on_click(self):
-        self.new_window.show()
-        #self.next_question()
-
-
+        return Menu_button("Quiz", window, x_cor=self.x_cor, y_cor=self.y_cor, wg=self.wg, hg=self.hg, on_click=self.on_click)
 
     def next_question(self):
-        current_question = self.question_list[self.question_number]
-        answer1 = self.question_list[self.question_number + random.randrange(1, 5)]
-        answer2 = self.question_list[self.question_number + random.randrange(5, 11)]
-        print(self.question_list[self.question_number].question_sound)
-        print(self.question_list[self.question_number].question_answer)
-        #self.new_window.create_sound_button(image=current_question.question_answer, x_cor=60, y_cor=100, wg=285, hg=197, sound= current_question.question_sound)
-        #self.new_window.create_quiz_button(image=answer1.question_answer, x_cor=440, y_cor=100, wg=285, hg=197, answer=current_question.question_answer, guess=answer1.question_answer)
-        #self.new_window.create_quiz_button(image=answer2.question_answer, x_cor=60, y_cor=350, wg=285, hg=197, answer=current_question.question_answer, guess=answer2.question_answer)
-        #self.new_window.create_quiz_button(image=current_question.question_answer, x_cor=440, y_cor=350, wg=285, hg=197, answer=current_question.question_answer, guess=current_question.question_answer)
+        all_keys = list(self.chords_images_sounds.keys())
+        correct = random.choice(all_keys)
+        all_keys.remove(correct)
+        bad_answer1 = random.choice(all_keys)
+        all_keys.remove(bad_answer1)
+        bad_answer2 = random.choice(all_keys)
+        question = Question_model(correct=correct, first_bad_answer=bad_answer1, second_bad_answer=bad_answer2)
+        answer1, answer2, answer3 = question.get_random_answers()
+        correctImage, correctSound = self.chords_images_sounds[question.correct]
+        button1 = self.new_window.create_sound_button(x_cor=40, y_cor=150, wg=150, hg=100, sound_file_name=correctSound,
+                                            image=correctImage)
+        self.new_window.create_image_button(x_cor=230, y_cor=150, wg=150, hg=100,
+                                            image=self.chords_images_sounds[answer1][0], correct_image=correctImage, clicked=self.clicked)
+        self.new_window.create_image_button(x_cor=420, y_cor=150, wg=150, hg=100,
+                                            image=self.chords_images_sounds[answer2][0], correct_image=correctImage, clicked=self.clicked)
+        self.new_window.create_image_button(x_cor=610, y_cor=150, wg=150, hg=100,
+                                            image=self.chords_images_sounds[answer3][0], correct_image=correctImage, clicked=self.clicked)
+
+    def on_click(self):
+        self.next_question()
+        self.new_window.show()
 
 
-    def random_question(self):
-        random_quest1 = random.choice(self.question_list)
-        random_quest2 = random.choice(self.question_list)
-        random_quest3 = random.choice(self.question_list)
-        random_quest4 = random.choice(self.question_list)
+    def clicked(self):
+        self.next_question()
 
 
 
 
-
-class Question:
-    def __init__(self, question_sound, question_answer):
-        self.question_sound = question_sound
-        self.question_answer = question_answer
 
 

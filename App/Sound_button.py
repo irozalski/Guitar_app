@@ -19,4 +19,3 @@ class Sound_button(QPushButton):
         # possible bug: QSoundEffect::Infinite cannot be used in setLoopCount
         effect.setLoopCount(1)
         effect.play()
-        print("clicked")

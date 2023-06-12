@@ -13,7 +13,7 @@ class ChordsWindow(QMainWindow):
         self.setStyleSheet("background-image:url(Images/new_background2.png); background-attachment: fixed")
 
     def create_sound_button(self, x_cor, y_cor, wg, hg, sound_file_name, image):
-        Sound_button(self, x_cor, y_cor, wg, hg, sound_file_name, image)
+        return Sound_button(self, x_cor, y_cor, wg, hg, sound_file_name, image)
 
-    def create_image_button(self, x_cor, y_cor, wg, hg, image, correct_image, clicked):
-        Image_button(self, x_cor, y_cor, wg, hg, image, correct_image,clicked)
+    def create_image_button(self, x_cor, y_cor, wg, hg, image, clicked):
+        return Image_button(self, x_cor, y_cor, wg, hg, image, clicked)

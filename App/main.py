@@ -1,14 +1,13 @@
 import json
 import sys
-from PyQt6.QtWidgets import QApplication
+from PyQt6.QtWidgets import QApplication, QVBoxLayout
 from window import Window
 from Chord import Chord
 from Tuner import Tuner
 from Metronome import Metronome
 from Quiz import Quiz
-import akord_base
 from question_model import Question_model
-import random
+from Score import Score
 
 app = QApplication(sys.argv)
 
@@ -51,12 +50,12 @@ tuner.create_button(window)
 tuner.create_new_window()
 metronome.create_button(window)
 
-quiz = Quiz(x_cor=320, y_cor=160, wg=150, hg=150, chords_images_sounds=chords_images_sounds)
+quiz = Quiz(x_cor=320, y_cor=160, wg=130, hg=130, chords_images_sounds=chords_images_sounds)
 quiz.create_button(window)
 
 
-
-
+#label = Highscore(score="woowo")
+#label.move(100,200)
 
 #if __name__ = "__main__":
 window.show()

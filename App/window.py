@@ -1,11 +1,11 @@
-from PyQt6.QtWidgets import QPushButton, QLabel, QMainWindow
+from PyQt6.QtWidgets import QPushButton, QLabel, QMainWindow, QFrame
 from PyQt6.QtGui import QIcon, QPixmap
 from PyQt6.QtMultimedia import QSoundEffect
-from PyQt6.QtCore import QUrl
+from PyQt6.QtCore import QUrl, Qt
 import Quiz as Quiz
 from Menu_button import Menu_button
 from Sound_button import Sound_button
-
+from Score import Score
 
 class Window(QMainWindow):
     def __init__(self):
@@ -17,6 +17,10 @@ class Window(QMainWindow):
         self.setStyleSheet("background-image:url(Images/background.png); background-attachment: fixed")
         self.pixmap_logo = QPixmap("Images/logo.png")
         self.create_logo()
+
+
+
+
 
     def create_logo(self):
         logo = QLabel(self)

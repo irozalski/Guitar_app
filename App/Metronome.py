@@ -6,15 +6,11 @@ from Menu_button import Menu_button
 
 
 class Metronome(QWidget):
-    def __init__(self, x_cor, y_cor, wg, hg):
+    def __init__(self):
         super().__init__()
-        self.x_cor = x_cor
-        self.y_cor = y_cor
-        self.wg = wg
-        self.hg = hg
         self.tempo = 120
         self.is_running = False
-        self.setWindowIcon(QIcon("metro_icon2.png"))
+        self.setWindowIcon(QIcon("Images/metro_icon2.png"))
         # timer i ustawienie sygnału timeout na funkcje tick()
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.tick)

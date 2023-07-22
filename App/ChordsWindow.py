@@ -1,37 +1,36 @@
 from PyQt6.QtCore import QTimer
 from PyQt6.QtWidgets import QMainWindow
 from PyQt6.QtGui import QIcon
-from Sound_button import Sound_button
-from Image_button import Image_button
+from Sound_button_creator import Sound_button_creator
 from Score import Score
 from Highscore import Highscore
+from PyQt6.QtWidgets import QWidget
+from PyQt6 import uic
 
-class ChordsWindow(QMainWindow):
-    def __init__(self, variant):
+class ChordsWindow(QWidget):
+    def __init__(self, variant, sound_7, sound_dur, sound_mol, image_7, image_dur, image_mol):
         super().__init__()
+        uic.loadUi("chord_window.ui", self)
         self.setWindowTitle(variant)
-        self.setWindowIcon(QIcon("Images/icon.png"))
-        self.setFixedHeight(600)
-        self.setFixedWidth(800)
+        #self.setWindowIcon(QIcon("Images/icon.png"))
+        #self.setFixedHeight(600)
+        #self.setFixedWidth(800)
         #self.setStyleSheet("background-image:url(Images/new_background2.png); background-attachment: fixed")
-        self.setStyleSheet("background-color: cyan;")
+        #self.setStyleSheet("background-color: cyan;")
+        self.initUi(sound_7, sound_dur, sound_mol, image_7, image_dur, image_mol)
 
-    def create_sound_button(self, x_cor, y_cor, wg, hg, sound_file_name, image):
-        return Sound_button(self, x_cor, y_cor, wg, hg, sound_file_name, image)
 
-    def create_image_button(self, x_cor, y_cor, wg, hg, image, clicked):
-        return Image_button(self, x_cor, y_cor, wg, hg, image, clicked)
+    def initUi(self, sound_7, sound_dur, sound_mol, image_7, image_dur, image_mol):
+        self.Button_7.setup(image_7, sound_7, self.progressBar)
+        self.Button_dur.setup(image_dur, sound_dur, self.progressBar)
+        self.Button_mol.setup(image_mol, sound_mol, self.progressBar)
+        self.progressBar.setValue(0)
 
-    def create_score_label(self, score):
-        return Score(score=score, parent=self)
 
-    def create_highscore_label(self, highscore):
-        return Highscore(highscore=highscore, parent=self)
 
-    def good_answer_screen(self):
-        self.setStyleSheet("background-color: green;")
-        QTimer.singleShot(600, lambda: self.setStyleSheet("background-color: cyan;"))
 
-    def bad_answer_screen(self):
-        self.setStyleSheet("background-color: red;")
-        QTimer.singleShot(600, lambda: self.setStyleSheet("background-color: cyan;"))
+
+
+
+
+

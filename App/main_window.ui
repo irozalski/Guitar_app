@@ -262,12 +262,45 @@ QPushButton:hover{
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="Splash_screen" name="splash_label">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>701</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	background-color: rgb(255, 255, 0);
+}</string>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
    <zorder>label_2</zorder>
    <zorder>gridLayoutWidget</zorder>
    <zorder>label</zorder>
+   <zorder>splash_label</zorder>
   </widget>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>Splash_screen</class>
+   <extends>QLabel</extends>
+   <header>Splash_screen</header>
+  </customwidget>
   <customwidget>
    <class>Menu_button</class>
    <extends>QPushButton</extends>

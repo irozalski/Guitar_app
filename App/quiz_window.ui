@@ -229,6 +229,33 @@ setStyleSheet(&quot;background:transparent&quot;);
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="Splash_screen" name="splash_label">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>801</width>
+     <height>701</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	background-color: rgb(255, 255, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>chance3</zorder>
   <zorder>gridLayoutWidget</zorder>
@@ -236,12 +263,18 @@ setStyleSheet(&quot;background:transparent&quot;);
   <zorder>Highscore_Label</zorder>
   <zorder>chance1</zorder>
   <zorder>chance2</zorder>
+  <zorder>splash_label</zorder>
  </widget>
  <customwidgets>
   <customwidget>
    <class>Sound_button</class>
    <extends>QPushButton</extends>
    <header>Sound_button</header>
+  </customwidget>
+  <customwidget>
+   <class>Splash_screen</class>
+   <extends>QLabel</extends>
+   <header>Splash_screen</header>
   </customwidget>
  </customwidgets>
  <resources/>

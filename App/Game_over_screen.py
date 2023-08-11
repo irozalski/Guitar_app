@@ -1,3 +1,4 @@
+from PyQt6 import uic
 from PyQt6.QtCore import QTimer, Qt, pyqtSignal
 from PyQt6.QtGui import QIcon, QPixmap
 from PyQt6.QtWidgets import QMainWindow, QLabel

@@ -72,7 +72,7 @@ class Quiz(QWidget):
             self.chances -= 1
             self.update_chances()
             if self.chances == 0:
-                Game_over_screen()
+                self.splash_label.display("yellow", "koniec")
                 self.on_click()
             else:
                 self.bad_answer_screen()
@@ -135,10 +135,11 @@ class Quiz(QWidget):
 
     def good_answer_screen(self):
         #Game_over_screen()
-        self.setStyleSheet("QWidget{background-color: green;} QPushButton{color: rgb(255, 255, 255);height: 150px;width: 200px; border:3px solid rgb(0,0,0); border-radius:8px;}")
-        QTimer.singleShot(600, lambda: self.setStyleSheet("QWidget{background-color: cyan;} QPushButton{color: rgb(255, 255, 255);height: 150px;width: 200px; border:3px solid rgb(0,0,0); border-radius:8px;}"))
-
+        #self.setStyleSheet("QWidget{background-color: green;} QPushButton{color: rgb(255, 255, 255);height: 150px;width: 200px; border:3px solid rgb(0,0,0); border-radius:8px;}")
+        #QTimer.singleShot(600, lambda: self.setStyleSheet("QWidget{background-color: cyan;} QPushButton{color: rgb(255, 255, 255);height: 150px;width: 200px; border:3px solid rgb(0,0,0); border-radius:8px;}"))
+        self.splash_label.display("green", "git")
     def bad_answer_screen(self):
         #Game_over_screen()
-        self.setStyleSheet("QWidget{background-color: red;} QPushButton{color: rgb(255, 255, 255);height: 150px;width: 200px; border:3px solid rgb(0,0,0); border-radius:8px;} ")
-        QTimer.singleShot(600, lambda: self.setStyleSheet("QWidget{background-color: cyan;} QPushButton{color: rgb(255, 255, 255);height: 150px;width: 200px; border:3px solid rgb(0,0,0); border-radius:8px;}"))
+        #self.setStyleSheet("QWidget{background-color: red;} QPushButton{color: rgb(255, 255, 255);height: 150px;width: 200px; border:3px solid rgb(0,0,0); border-radius:8px;} ")
+        #QTimer.singleShot(600, lambda: self.setStyleSheet("QWidget{background-color: cyan;} QPushButton{color: rgb(255, 255, 255);height: 150px;width: 200px; border:3px solid rgb(0,0,0); border-radius:8px;}"))
+        self.splash_label.display("red", "zle")

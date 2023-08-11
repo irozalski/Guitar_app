@@ -22,6 +22,7 @@ class AppWindow(QMainWindow):
         self.chords_images_sounds = {}
         self.load_chords()
         self.initUI()
+        self.splash_label.display("cyan", "welcvome")
 
 
     def load_chords(self):
@@ -72,7 +73,7 @@ class AppWindow(QMainWindow):
         self.Metronome_Button.clicked.connect(lambda: metronome.on_click())
         self.Quiz_Button.clicked.connect(lambda: quiz.on_click())
         self.Tuner_Button.clicked.connect(lambda: tuner.on_click())
-        splash_screen = Splash_screen()
+        #splash_screen = Splash_screen()
 
 
 

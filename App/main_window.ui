@@ -42,7 +42,7 @@ width: 90px;
 border:3px solid rgb(0,0,0);
 border-radius:8px;
 padding:10px;
-font-family: Helvetica;
+font-family: Rockwell;
 font-weight: bold;
 font-variant: normal;
 font-size: 15px;
@@ -81,6 +81,13 @@ QPushButton:hover{
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Rockwell</family>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
        </property>
        <property name="text">
         <string>Metronome</string>
@@ -209,10 +216,10 @@ QPushButton:hover{
     </property>
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>280</x>
       <y>20</y>
-      <width>191</width>
-      <height>121</height>
+      <width>231</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -228,7 +235,7 @@ QPushButton:hover{
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Images/icon.png</pixmap>
+     <pixmap>Images/logo_v1.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -281,12 +288,13 @@ QPushButton:hover{
      </sizepolicy>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel{
-	background-color: rgb(255, 255, 0);
-}</string>
+     <string notr="true"/>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Images/main_splash_screen.png</pixmap>
     </property>
    </widget>
    <zorder>label_2</zorder>

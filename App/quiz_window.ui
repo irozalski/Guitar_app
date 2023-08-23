@@ -38,47 +38,15 @@ border-radius:8px;
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>170</y>
+     <y>200</y>
      <width>751</width>
-     <height>451</height>
+     <height>421</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <property name="sizeConstraint">
      <enum>QLayout::SetDefaultConstraint</enum>
     </property>
-    <item row="1" column="0">
-     <widget class="Sound_button" name="Answer1_Button">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>Answer1</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="Sound_button" name="Answer2_Button">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>Answer2</string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="1">
      <widget class="Sound_button" name="Question_Button">
       <property name="sizePolicy">
@@ -91,11 +59,43 @@ border-radius:8px;
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>Question</string>
+       <string/>
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
+    <item row="3" column="1">
+     <widget class="Sound_button" name="Answer2_Button">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="Sound_button" name="Answer1_Button">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
      <widget class="Sound_button" name="Answer3_Button">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -107,7 +107,7 @@ border-radius:8px;
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>Answer3</string>
+       <string/>
       </property>
      </widget>
     </item>
@@ -122,11 +122,21 @@ border-radius:8px;
      <height>30</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Rockwell Extra Bold</family>
+     <pointsize>20</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(85, 255, 127);</string>
+    <string notr="true">background-color: rgba(0, 0, 0, 0);
+color: rgb(247, 178, 57);
+ 
+</string>
    </property>
    <property name="text">
     <string>Score</string>
@@ -135,14 +145,24 @@ border-radius:8px;
   <widget class="QLabel" name="Highscore_Label">
    <property name="geometry">
     <rect>
-     <x>600</x>
+     <x>550</x>
      <y>60</y>
-     <width>140</width>
+     <width>221</width>
      <height>30</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Rockwell Extra Bold</family>
+     <pointsize>20</pointsize>
+     <bold>true</bold>
+     <underline>true</underline>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 127);</string>
+    <string notr="true">background-color: rgba(0, 0, 0, 0);
+color: rgb(247, 178, 57);
+</string>
    </property>
    <property name="text">
     <string>Highscore</string>
@@ -151,7 +171,7 @@ border-radius:8px;
   <widget class="QLabel" name="chance1">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>40</y>
      <width>101</width>
      <height>91</height>
@@ -161,7 +181,7 @@ border-radius:8px;
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>Images/note_img.png</pixmap>
+    <pixmap>Images/health_final.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -170,9 +190,9 @@ border-radius:8px;
   <widget class="QLabel" name="chance2">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>130</x>
      <y>40</y>
-     <width>91</width>
+     <width>101</width>
      <height>91</height>
     </rect>
    </property>
@@ -180,7 +200,7 @@ border-radius:8px;
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>Images/note_img.png</pixmap>
+    <pixmap>Images/health_final.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -189,7 +209,7 @@ border-radius:8px;
   <widget class="QLabel" name="chance3">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>240</x>
      <y>40</y>
      <width>101</width>
      <height>91</height>
@@ -204,7 +224,7 @@ setStyleSheet(&quot;background:transparent&quot;);
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>Images/note_img.png</pixmap>
+    <pixmap>Images/health_final.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -218,6 +238,9 @@ setStyleSheet(&quot;background:transparent&quot;);
      <width>801</width>
      <height>701</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 0, 0);</string>
    </property>
    <property name="text">
     <string/>
@@ -256,6 +279,37 @@ setStyleSheet(&quot;background:transparent&quot;);
     <string>TextLabel</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>180</y>
+     <width>341</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Rockwell Extra Bold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);
+color: rgb(85, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>Play and guess the chord!!!</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <zorder>splash_label</zorder>
   <zorder>label</zorder>
   <zorder>chance3</zorder>
   <zorder>gridLayoutWidget</zorder>
@@ -263,7 +317,7 @@ setStyleSheet(&quot;background:transparent&quot;);
   <zorder>Highscore_Label</zorder>
   <zorder>chance1</zorder>
   <zorder>chance2</zorder>
-  <zorder>splash_label</zorder>
+  <zorder>label_2</zorder>
  </widget>
  <customwidgets>
   <customwidget>

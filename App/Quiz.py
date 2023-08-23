@@ -22,7 +22,7 @@ class Quiz(QWidget):
         self.score = 0
         self.chances = 3
         self.highscore = self.get_highscore()
-        self.question_image = "border-image:url(Images/questionmark.png)"
+        self.question_image = "border-image:url(Images/icon.png)"
         self.initUi()
         self.next_question()
 

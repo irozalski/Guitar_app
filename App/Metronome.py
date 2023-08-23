@@ -23,12 +23,13 @@ class Metronome(QWidget):
         self.tempo_slider.valueChanged.connect(self.set_tempo)
 
         self.start_stop_button = QPushButton("Start")
+        self.start_stop_button.setFont(QFont('Rockwell Extra Bold', 15))
         self.start_stop_button.setFixedWidth(160)
         self.start_stop_button.setFixedHeight(40)
         self.start_stop_button.clicked.connect(self.start_stop)
 
         self.tempo_label = QLabel(str(self.tempo))
-        self.tempo_label.setFont(QFont('Arial', 15))
+        self.tempo_label.setFont(QFont('Rockwell Extra Bold', 15))
         self.tempo_label.setStyleSheet("background-color: rgba(0, 255, 255, 90)")
 
         # layouts

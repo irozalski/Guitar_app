@@ -37,6 +37,6 @@ class Splash_screen(QLabel):
 
     def display(self, color, text=""):
         self.setText(text)
-        self.setStyleSheet(f"background-color: {color};")
+        #self.setStyleSheet(f"background-color: {color};")
         self.setVisible(True)
         QTimer.singleShot(1000, lambda: self.setVisible(False))

@@ -35,6 +35,7 @@ class Quiz(QWidget):
 
 
 
+
     def next_question(self):
         all_keys = list(self.chords_images_sounds.keys())
         correct = random.choice(all_keys)
@@ -66,13 +67,17 @@ class Quiz(QWidget):
         if image == self.correct_image:
             self.update_score()
             self.update_highscore()
+            self.answer_sound("Sounds/correct_answer.wav", "good")
             self.good_answer_screen()
 
         else:
             self.chances -= 1
             self.update_chances()
+            self.answer_sound("Sounds/bad_answer.wav", "bad")
             if self.chances == 0:
-                self.splash_label.display("yellow", "koniec")
+                self.game_over_splash_label.display(900)
+                self.last_score_label.setText(f"Score: {self.score}")
+                self.last_score_label.display(900)
                 self.on_click()
             else:
                 self.bad_answer_screen()
@@ -134,12 +139,19 @@ class Quiz(QWidget):
 
 
     def good_answer_screen(self):
-        #Game_over_screen()
-        #self.setStyleSheet("QWidget{background-color: green;} QPushButton{color: rgb(255, 255, 255);height: 150px;width: 200px; border:3px solid rgb(0,0,0); border-radius:8px;}")
-        #QTimer.singleShot(600, lambda: self.setStyleSheet("QWidget{background-color: cyan;} QPushButton{color: rgb(255, 255, 255);height: 150px;width: 200px; border:3px solid rgb(0,0,0); border-radius:8px;}"))
-        self.splash_label.display("green", "git")
+        self.good_answer_splash_label.display(time=600)
+
     def bad_answer_screen(self):
-        #Game_over_screen()
-        #self.setStyleSheet("QWidget{background-color: red;} QPushButton{color: rgb(255, 255, 255);height: 150px;width: 200px; border:3px solid rgb(0,0,0); border-radius:8px;} ")
-        #QTimer.singleShot(600, lambda: self.setStyleSheet("QWidget{background-color: cyan;} QPushButton{color: rgb(255, 255, 255);height: 150px;width: 200px; border:3px solid rgb(0,0,0); border-radius:8px;}"))
-        self.splash_label.display("red", "zle")
+        self.wrong_answer_splash_label.display(time=600)
+
+    def answer_sound(self, sound_file_name, good_or_bad):
+        global effect
+        effect = QSoundEffect()
+        effect.setSource(QUrl.fromLocalFile(sound_file_name))
+        if good_or_bad == "good":
+            effect.setVolume(0.1)
+        else:
+            effect.setVolume(0.02)
+        # possible bug: QSoundEffect::Infinite cannot be used in setLoopCount
+        effect.setLoopCount(1)
+        effect.play()

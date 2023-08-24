@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>801</width>
     <height>700</height>
    </rect>
   </property>
@@ -252,7 +252,7 @@ setStyleSheet(&quot;background:transparent&quot;);
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="Splash_screen" name="splash_label">
+  <widget class="Splash_screen" name="good_answer_splash_label">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -276,7 +276,10 @@ setStyleSheet(&quot;background:transparent&quot;);
 }</string>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>Images/correct_answer_screen.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -297,7 +300,8 @@ setStyleSheet(&quot;background:transparent&quot;);
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgba(0, 0, 0, 0);
-color: rgb(85, 255, 127);</string>
+color: rgb(255, 255, 255);
+</string>
    </property>
    <property name="text">
     <string>Play and guess the chord!!!</string>
@@ -309,7 +313,74 @@ color: rgb(85, 255, 127);</string>
     <bool>false</bool>
    </property>
   </widget>
-  <zorder>splash_label</zorder>
+  <widget class="Splash_screen" name="wrong_answer_splash_label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>801</width>
+     <height>701</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>Images/wrong_answer_screen.png</pixmap>
+   </property>
+  </widget>
+  <widget class="Splash_screen" name="game_over_splash_label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>801</width>
+     <height>701</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>Images/game_over_screen.png</pixmap>
+   </property>
+  </widget>
+  <widget class="Splash_screen" name="last_score_label">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>480</y>
+     <width>391</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Rockwell Extra Bold</family>
+     <pointsize>48</pointsize>
+     <bold>true</bold>
+     <underline>true</underline>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>chance3</zorder>
   <zorder>gridLayoutWidget</zorder>
@@ -318,6 +389,10 @@ color: rgb(85, 255, 127);</string>
   <zorder>chance1</zorder>
   <zorder>chance2</zorder>
   <zorder>label_2</zorder>
+  <zorder>good_answer_splash_label</zorder>
+  <zorder>wrong_answer_splash_label</zorder>
+  <zorder>game_over_splash_label</zorder>
+  <zorder>last_score_label</zorder>
  </widget>
  <customwidgets>
   <customwidget>

@@ -35,8 +35,8 @@ class Splash_screen(QLabel):
     #     self.windowClosed.emit()
     #     event.accept()
 
-    def display(self, color, text=""):
-        self.setText(text)
+    def display(self, time):
+        #self.setText(text)
         #self.setStyleSheet(f"background-color: {color};")
         self.setVisible(True)
-        QTimer.singleShot(1000, lambda: self.setVisible(False))
+        QTimer.singleShot(time, lambda: self.setVisible(False))

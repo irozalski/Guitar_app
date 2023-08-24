@@ -28,7 +28,7 @@ class Metronome(QWidget):
         self.start_stop_button.setFixedHeight(40)
         self.start_stop_button.clicked.connect(self.start_stop)
 
-        self.tempo_label = QLabel(str(self.tempo))
+        self.tempo_label = QLabel("Bpm: " + str(self.tempo))
         self.tempo_label.setFont(QFont('Rockwell Extra Bold', 15))
         self.tempo_label.setStyleSheet("background-color: rgba(0, 255, 255, 90)")
 
@@ -57,7 +57,7 @@ class Metronome(QWidget):
 
     def set_tempo(self, tempo):
         self.tempo = tempo
-        self.tempo_label.setText(str(tempo))
+        self.tempo_label.setText("Bpm: " +str(tempo))
         if self.is_running:
             self.start_stop()
             self.start_stop()

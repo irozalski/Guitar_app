@@ -1,17 +1,11 @@
 import json
 import sys
-
 from PyQt6 import uic
-from PyQt6.QtWidgets import QApplication, QVBoxLayout, QMainWindow
-from PyQt6.QtCore import QPropertyAnimation
-from window import Window
+from PyQt6.QtWidgets import QApplication, QMainWindow
 from Chord import Chord
 from Tuner import Tuner
 from Metronome import Metronome
 from Quiz import Quiz
-from Splash_screen import Splash_screen
-from question_model import Question_model
-from Score import Score
 
 
 class AppWindow(QMainWindow):
@@ -24,9 +18,7 @@ class AppWindow(QMainWindow):
         self.initUI()
         self.splash_label.display(time=1500)
 
-
     def load_chords(self):
-
         with open("json_chords_base.json", "r") as f:
             jsonObject = json.loads(f.read())
             for key in jsonObject:
@@ -50,9 +42,6 @@ class AppWindow(QMainWindow):
         for chord in range(len(self.chord_list)):
             self.chord_list[chord].connect_button(button_list[chord])
 
-
-
-
         tuner = Tuner(
                       image_e6="border-image:url(C-7.png)", image_a="border-image:url(C-dur.png)",
                       image_d="border-image:url(C-mol.png)",
@@ -63,33 +52,19 @@ class AppWindow(QMainWindow):
 
         metronome = Metronome()
 
-
         tuner.create_new_window()
 
-
         quiz = Quiz(chords_images_sounds=self.chords_images_sounds)
-
 
         self.Metronome_Button.clicked.connect(lambda: metronome.on_click())
         self.Quiz_Button.clicked.connect(lambda: quiz.on_click())
         self.Tuner_Button.clicked.connect(lambda: tuner.on_click())
 
 
-
-
-
-
-
 app = QApplication(sys.argv)
 
 window = AppWindow()
-#window = Window()
 
-
-
-
-
-#splash_screen.windowClosed.connect(window.activate)
 window.show()
 
 sys.exit(app.exec())

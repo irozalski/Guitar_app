@@ -12,13 +12,6 @@ class Menu_button(QPushButton):
         self.animation.setDuration(100)
 
 
-        # self.colorEffect = QGraphicsColorizeEffect(self)
-        # self.colorEffect.setStrength(0)
-        # self.colorEffect.setColor(255,0,0)
-        # self.colorAnimation = QPropertyAnimation(self.colorEffect, b"strength")
-        # self.colorAnimation.setDuration(1000)
-        #self.setStyleSheet(""" """)
-
     def enterEvent(self, event):
         self.animation.setDirection(self.animation.Direction.Forward)
         if self.animation.state() == self.animation.State.Stopped:

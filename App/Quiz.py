@@ -1,17 +1,13 @@
 import random
-
-from PyQt6.QtCore import QTimer
 from PyQt6.QtWidgets import QWidget
 from PyQt6 import uic
-from Game_over_screen import Game_over_screen
 from Sound_button_creator import *
-from Menu_button import Menu_button
 from question_model import Question_model
-import ChordsWindow as ChordsWindow
-from PyQt6.QtGui import QIcon
 from functools import partial
-from Score import Score
+
 import json
+
+
 class Quiz(QWidget):
 
     def __init__(self, chords_images_sounds):
@@ -26,15 +22,8 @@ class Quiz(QWidget):
         self.initUi()
         self.next_question()
 
-
     def initUi(self):
         self.Highscore_Label.setText(f"Highscore: {self.highscore}")
-
-
-
-
-
-
 
     def next_question(self):
         all_keys = list(self.chords_images_sounds.keys())
@@ -46,7 +35,6 @@ class Quiz(QWidget):
         question = Question_model(correct=correct, first_bad_answer=bad_answer1, second_bad_answer=bad_answer2)
         answer1, answer2, answer3 = question.get_random_answers()
         self.correct_image, correctSound = self.chords_images_sounds[question.correct]
-        #Sound_button_creator.set_button(button=self.Question_Button, sound_file_name=correctSound, image=self.question_image)
         self.Question_Button.setup(self.question_image, correctSound)
         self.update_image(button=self.Answer1_Button, image=self.chords_images_sounds[answer1][0])
         self.update_image(button=self.Answer2_Button, image=self.chords_images_sounds[answer2][0])
@@ -61,7 +49,6 @@ class Quiz(QWidget):
         self.chance1.show()
         self.next_question()
         self.show()
-
 
     def clicked(self, image):
         if image == self.correct_image:
@@ -86,17 +73,12 @@ class Quiz(QWidget):
     def update_image(self,button, image):
         button.setStyleSheet(image)
 
-
         try:
             button.clicked.disconnect()
         except TypeError:
             pass
         finally:
             button.clicked.connect(partial(self.clicked, image))
-
-
-
-
 
     def update_sound(self,button, sound):
 
@@ -108,7 +90,6 @@ class Quiz(QWidget):
         finally:
             button.clicked.connect(lambda: button.sound_button_click(sound))
 
-
     def get_highscore(self):
         with open("json_highscore.json", "r+") as f:
             jsonObject = json.load(f)
@@ -118,7 +99,6 @@ class Quiz(QWidget):
                 json.dump(jsonObject, f)  # Write the updated high score back to the JSON file
                 f.truncate()  # Truncate the remaining content if necessary
             return jsonObject["highscore"]
-
 
     def update_score(self):
         self.score += 1
@@ -135,8 +115,6 @@ class Quiz(QWidget):
             self.chance2.hide()
         if self.chances == 0:
             self.chance1.hide()
-
-
 
     def good_answer_screen(self):
         self.good_answer_splash_label.display(time=600)

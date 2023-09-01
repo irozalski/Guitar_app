@@ -11,7 +11,6 @@ class Window(QMainWindow):
         self.setFixedHeight(600)
         self.setFixedWidth(800)
         self.setStyleSheet("background-image:url(Images/background.png); background-attachment: fixed")
-        #self.splash_screen()
         self.pixmap_logo = QPixmap("Images/logo.png")
         self.create_logo()
 
@@ -22,9 +21,6 @@ class Window(QMainWindow):
         logo.setScaledContents(True)
         logo.move(280, 25)
 
-    # def splash_screen(self):
-    #     self.setStyleSheet("background-color: red;")
-    #     QTimer.singleShot(2000, lambda: self.setStyleSheet("background-image:url(Images/background.png); background-attachment: fixed"))
 
 
 

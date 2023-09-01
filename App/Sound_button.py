@@ -1,9 +1,7 @@
-from functools import partial
-
-from PyQt6.QtCore import QPropertyAnimation, QMargins, QAbstractAnimation, QUrl
+from PyQt6.QtCore import QPropertyAnimation, QMargins, QUrl
 from PyQt6.QtMultimedia import QSoundEffect
 from PyQt6.QtWidgets import QPushButton, QGraphicsColorizeEffect
-from PyQt6.QtGui import QEnterEvent, QColor
+from PyQt6.QtGui import QColor
 
 
 class Sound_button(QPushButton):
@@ -11,16 +9,12 @@ class Sound_button(QPushButton):
         super().__init__(*args, **kwargs)
         self.animation = QPropertyAnimation(self, b"geometry")
         self.animation.setDuration(100)
-
-
-
         self.colorEffect = QGraphicsColorizeEffect(self)
         self.colorEffect.setStrength(0)
         self.colorEffect.setColor(QColor(0,255,255))
         self.setGraphicsEffect(self.colorEffect)
         self.colorAnimation = QPropertyAnimation(self.colorEffect, b"strength")
         self.colorAnimation.setDuration(300)
-        #self.setStyleSheet(""" """)
 
     def enterEvent(self, event):
         self.animation.setDirection(self.animation.Direction.Forward)
@@ -51,7 +45,6 @@ class Sound_button(QPushButton):
 
     def sound_button_click(self, sound_file_name):
         self.colorAnimation.setDuration(600)
-
         global effect
         effect = QSoundEffect()
         effect.setSource(QUrl.fromLocalFile(sound_file_name))

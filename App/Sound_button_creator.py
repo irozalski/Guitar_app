@@ -1,7 +1,6 @@
-from PyQt6.QtWidgets import QPushButton
-from PyQt6.QtGui import QFont
 from PyQt6.QtMultimedia import QSoundEffect
 from PyQt6.QtCore import QUrl
+
 
 class Sound_button_creator:
 

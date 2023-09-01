@@ -11,7 +11,6 @@ from Sound_button_creator import Sound_button_creator
 class Tuner(QWidget):
     def __init__(self, image_e6, image_a, image_d, image_g, image_b, image_e1, sound_e6, sound_a, sound_d, sound_g, sound_b, sound_e1):
         super().__init__()
-        #self.new_window = ChordsWindow("Tuner")
         self.image_e6 = image_e6
         self.image_a = image_a
         self.image_d = image_d
